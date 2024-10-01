@@ -18,7 +18,7 @@
 require "yaml"
 require "open-uri"
 require "uri"
-
+require 'debug'
 class Cangallo
 
   class Repo
@@ -57,12 +57,12 @@ class Cangallo
     def read_index(index = nil)
       if !index
         if File.exist?(index_path)
-          data = YAML.load(File.read(index_path))
+          data = YAML.load(File.read(index_path), permitted_classes: [Time])
         else
           data = index_data()
         end
       else
-        data = YAML.load(index)
+        data = YAML.load(index, permitted_classes: [Time])
       end
 
       @images       = data["images"]
