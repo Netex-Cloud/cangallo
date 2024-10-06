@@ -23,6 +23,7 @@ require 'cangallo/libguestfs'
 require 'cangallo/keybase'
 require 'cangallo/version'
 require 'cangallo/check'
+require 'cangallo/kernel'
 
 class Cangallo
   def initialize
@@ -118,4 +119,3 @@ class Cangallo
     img
   end
 end
-

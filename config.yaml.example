@@ -1,0 +1,5 @@
+default_repo: default
+repos:
+    default:
+        type: local
+        path: ~/app/images
